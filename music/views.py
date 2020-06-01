@@ -9,11 +9,12 @@ from django.http import HttpResponse
 from django.shortcuts import render
 def index(request):
 	all_albums = Album.objects.all()
-	template = loader.get_template('music/index.html')
+	# templates = loader.get_template('music/index.html')
 	context = {
 		'all_albums': all_albums,
 	}
-	return HttpResponse(template.render(context,request))
+	# return HttpResponse(templates.render(context,request))
+	return render(request, 'music/index.html', context= context)
 	#return HttpResponse(""<h1> this is the music app homepage </h1>)
 
 def detail(request, album_id):
