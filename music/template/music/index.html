@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>
+        Music App
+    </title>
+</head>
+<body>
+{% if all_albums %}
+    <ul>
+        {% for album in all_albums %}
+        <li>
+
+            <a href="/music/{{album.id}}">
+                {{album.album_title}}
+            </a>
+        {% endfor %}
+        </li>
+    </ul>
+{% else %}
+    <h3>
+        Dont have any album to display.
+    </h3>
+{% endif %}
+</body>
+</html>
