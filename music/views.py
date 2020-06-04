@@ -1,5 +1,5 @@
 #from django.shortcuts import render
-from .models import Album
+from .models import Album, Song
 from django.http import Http404
 from django.template import loader
 # Create your views here.
@@ -42,6 +42,6 @@ def favorite(request,album_id):
 			'error_message':"didnot selected a valid song",
 		})
 	else:
-		selected_song.is_facorite = True
+		selected_song.is_favorite = True
 		selected_song.save()
 		return render(request,'music/detail.html',{'album':album})
