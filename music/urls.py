@@ -20,6 +20,9 @@ urlpatterns = [
 
 	url(r'^(?P<pk>[0-9]+)$',views.DetailView.as_view(),name='detail'),
 
+	# forms
+	url(r'^register/$',views.UserFormView.as_view(),name='register'),
+
 	# for favorite
 	#url(r'^(?P<album_id>[0-9]+)/favorite/$',views.favorite,name='favorite'),
 
